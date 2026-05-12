@@ -16,6 +16,24 @@ layout: layouts/base.njk
 
 {{ content | safe }}
 
+<section class="newsletter-signup" aria-label="Newsletter signup">
+	<h2 class="newsletter-signup__heading">Stay in the loop</h2>
+	<p class="newsletter-signup__description">Enjoyed this post? Get new articles delivered straight to your inbox — no spam, unsubscribe any time.</p>
+	<form class="newsletter-signup__form" onsubmit="return false;" aria-label="Subscribe to newsletter">
+		<label class="visually-hidden" for="newsletter-email">Email address</label>
+		<input
+			class="newsletter-signup__input"
+			type="email"
+			id="newsletter-email"
+			name="email"
+			placeholder="your@email.com"
+			required
+			autocomplete="email"
+		/>
+		<button class="newsletter-signup__button" type="submit">Subscribe</button>
+	</form>
+</section>
+
 {%- if collections.posts %}
 {%- set previousPost = collections.posts | getPreviousCollectionItem %}
 {%- set nextPost = collections.posts | getNextCollectionItem %}
